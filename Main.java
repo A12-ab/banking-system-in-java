@@ -5,37 +5,37 @@ public class Main {
 
 
 
-        System.out.println("Hello and welcome!");
+        System.out.println("Hello and welcome!\n");
 
-        System.out.printf("Initializing banking system..");
+        System.out.printf("Initializing banking system...\n");
 
         int totalNumberOfSimulaion = 10;
         OperationsQueue operationsQueue = new OperationsQueue();
         Bank bank = new Bank("123", operationsQueue);
 
-        System.out.println("Initializing simulation....");
+        System.out.println("Initializing simulatiom....\n");
         Thread simulationThread = new Thread(() -> {
             operationsQueue.addSimulation(totalNumberOfSimulaion);
         });
         simulationThread.start();
 
 
-        System.out.printf("Initializing deposit systen....");
+        System.out.printf("Initializing deposit system....\n");
         Thread depositThread = new Thread(() -> {
             bank.deposit();
         });
         depositThread.start();
-        System.out.println("coompleted");
+        System.out.println("completed");
 
-        System.out.printf("Initializing withdraw systen....");
+        System.out.printf("Initializing withdraw system....\n");
         Thread withdrawThread = new Thread(() -> {
             bank.withdraw();
         });
         withdrawThread.start();
-        System.out.println("coompleted");
+        System.out.println("coompleted\n");
 
 
-        System.out.println("coompleted");
+        System.out.println("coompleted\n");
 
     }
 }
